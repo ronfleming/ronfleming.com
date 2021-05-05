@@ -1,0 +1,139 @@
+header {
+    grid-area: ga-header;
+}
+
+main {
+    grid-area: ga-main;
+}
+
+#techskills {
+    grid-area: ga-techskills;
+}
+
+#techexperience {
+    grid-area: ga-techexperience;
+}
+
+#education {
+    grid-area: ga-education;
+}
+
+#profexperience {
+    grid-area: ga-profexperience;
+}
+
+#prof-exp-header {
+    grid-area: ga-prof-exp-header;
+}
+
+#grainger {
+    grid-area: ga-grainger;
+}
+
+#gamut {
+    grid-area: ga-gamut;
+}
+
+#freelance {
+    grid-area: ga-freelance;
+}
+
+#amazon {
+    grid-area: ga-amazon;
+}
+
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 920px;
+    margin: auto;
+    padding: 30px;
+    font-family: Calibri;
+    grid-template-areas: 
+    "ga-header ga-header"
+    "ga-main ga-main";
+
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "ga-techskills ga-techskills"
+    "ga-techexperience ga-techexperience"
+    "ga-education ga-education"
+    "ga-profexperience ga-profexperience";
+}
+
+.summary {
+    border-top: 2px solid #005F65;
+    border-bottom: 2px solid #005F65;
+    margin-bottom: 15px;
+}
+
+#profexperience {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "ga-prof-exp-header ga-prof-exp-header"
+    "ga-grainger ga-grainger"
+    "ga-gamut ga-gamut"
+    "ga-freelance ga-freelance"
+    "ga-amazon ga-amazon";
+}
+
+h1 {
+    font-family: "Bookman Old Style";
+    font-size: 48px;
+    margin: auto;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.1rem;
+}
+
+main > div > p {
+    margin: 4px;
+}
+
+main > div > div {
+    margin-top: 0px;
+}
+
+main > div ul {
+    margin-top: 0px;
+}
+
+main > div > h3 {
+    margin: 0px;
+}
+
+.withdate {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+}
+
+.tophead {
+    padding-bottom: 10px;
+}
+
+.tophead p {
+    margin: auto;
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+    font-size: 1.03rem;
+}
+
+.darkgreen {
+    color:#005F65;
+}
+
+.spacer {
+    flex-grow: 1;
+}
