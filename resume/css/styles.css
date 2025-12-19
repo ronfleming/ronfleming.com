@@ -26,6 +26,14 @@ main {
     grid-area: ga-prof-exp-header;
 }
 
+#biberk {
+    grid-area: ga-biberk;
+}
+
+#madelabs {
+    grid-area: ga-madelabs;
+}
+
 #grainger {
     grid-area: ga-grainger;
 }
@@ -34,20 +42,8 @@ main {
     grid-area: ga-gamut;
 }
 
-#freelance {
-    grid-area: ga-freelance;
-}
-
 #amazon {
     grid-area: ga-amazon;
-}
-
-#madelabs-employee {
-    grid-area: ga-madelabs-employee;
-}
-
-#madelabs-contract {
-    grid-area: ga-madelabs-contract;
 }
 
 
@@ -69,8 +65,8 @@ main {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
     "ga-techskills ga-techskills"
-    "ga-education ga-education"
     "ga-profexperience ga-profexperience"
+    "ga-education ga-education"
     "ga-techexperience ga-techexperience";
 }
 
@@ -85,12 +81,17 @@ main {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
     "ga-prof-exp-header ga-prof-exp-header"
-    "ga-madelabs-employee ga-madelabs-employee"
-    "ga-madelabs-contract ga-madelabs-contract"
+    "ga-biberk ga-biberk"
+    "ga-madelabs ga-madelabs"
     "ga-grainger ga-grainger"
     "ga-gamut ga-gamut"
-    "ga-freelance ga-freelance"
     "ga-amazon ga-amazon";
+}
+
+.promotion-note {
+    margin: 0 0 0 4px;
+    font-size: 0.95rem;
+    color: #555;
 }
 
 h1 {
