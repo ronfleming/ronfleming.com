@@ -149,3 +149,26 @@ main > div > h3 {
 .spacer {
     flex-grow: 1;
 }
+
+/* Home navigation */
+.resume-nav {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-size: 0.9rem;
+}
+
+.resume-nav a {
+    color: #005F65;
+    text-decoration: none;
+}
+
+.resume-nav a:hover {
+    text-decoration: underline;
+}
+
+@media print {
+    .resume-nav {
+        display: none;
+    }
+}

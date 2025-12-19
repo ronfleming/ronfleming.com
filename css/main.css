@@ -1,0 +1,257 @@
+/* Ron Fleming Personal Site - Main Styles */
+
+:root {
+    --color-bg: #FAFAF9;
+    --color-bg-alt: #F5F5F4;
+    --color-text: #1C1917;
+    --color-text-muted: #57534E;
+    --color-accent: #005F65;
+    --color-accent-hover: #004A4F;
+    --color-border: #E7E5E4;
+    --font-main: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --max-width: 800px;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2.5rem;
+    --spacing-xl: 4rem;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+/* Layout */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Header / Hero */
+.site-header {
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+    text-align: center;
+}
+
+.site-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    margin: 0 0 var(--spacing-xs);
+    letter-spacing: -0.02em;
+}
+
+.site-title .accent {
+    color: var(--color-accent);
+}
+
+.tagline {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--spacing-md);
+    font-weight: 400;
+}
+
+.intro {
+    font-size: 1.1rem;
+    color: var(--color-text);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Navigation */
+.site-nav {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) 0;
+    margin-bottom: var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.site-nav a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.2s ease;
+}
+
+.site-nav a:hover {
+    color: var(--color-accent);
+}
+
+/* Main content */
+main {
+    padding-bottom: var(--spacing-xl);
+}
+
+/* Sections */
+.section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    margin: 0 0 var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--color-accent);
+    display: inline-block;
+}
+
+/* Resume Links */
+.resume-links {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.resume-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.resume-link:hover {
+    border-color: var(--color-accent);
+    background: white;
+}
+
+.resume-link .flag {
+    font-size: 1.25rem;
+}
+
+/* Project Cards */
+.project-card {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    transition: all 0.2s ease;
+}
+
+.project-card:hover {
+    border-color: var(--color-accent);
+    background: white;
+}
+
+.project-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 var(--spacing-xs);
+}
+
+.project-title a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.project-title a:hover {
+    color: var(--color-accent);
+}
+
+.project-description {
+    color: var(--color-text-muted);
+    margin: 0 0 var(--spacing-sm);
+    font-size: 1rem;
+}
+
+.project-tech {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+}
+
+.tech-tag {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    color: var(--color-text-muted);
+}
+
+/* Connect Links */
+.connect-links {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.connect-link {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.connect-link:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .site-title {
+        font-size: 2rem;
+    }
+    
+    .tagline {
+        font-size: 1.1rem;
+    }
+    
+    .site-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-sm);
+    }
+    
+    .resume-links {
+        flex-direction: column;
+    }
+    
+    .resume-link {
+        justify-content: center;
+    }
+}
+
