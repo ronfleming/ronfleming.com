@@ -46,7 +46,6 @@ main {
     grid-area: ga-amazon;
 }
 
-
 body {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -54,25 +53,24 @@ body {
     margin: auto;
     padding: 30px;
     font-family: Calibri;
-    grid-template-areas: 
-    "ga-header ga-header"
-    "ga-main ga-main";
-
+    grid-template-areas:
+        'ga-header ga-header'
+        'ga-main ga-main';
 }
 
 main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-    "ga-techskills ga-techskills"
-    "ga-profexperience ga-profexperience"
-    "ga-education ga-education"
-    "ga-techexperience ga-techexperience";
+        'ga-techskills ga-techskills'
+        'ga-profexperience ga-profexperience'
+        'ga-education ga-education'
+        'ga-techexperience ga-techexperience';
 }
 
 .summary {
-    border-top: 2px solid #005F65;
-    border-bottom: 2px solid #005F65;
+    border-top: 2px solid #005f65;
+    border-bottom: 2px solid #005f65;
     margin-bottom: 15px;
 }
 
@@ -80,12 +78,12 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-    "ga-prof-exp-header ga-prof-exp-header"
-    "ga-biberk ga-biberk"
-    "ga-madelabs ga-madelabs"
-    "ga-grainger ga-grainger"
-    "ga-gamut ga-gamut"
-    "ga-amazon ga-amazon";
+        'ga-prof-exp-header ga-prof-exp-header'
+        'ga-biberk ga-biberk'
+        'ga-madelabs ga-madelabs'
+        'ga-grainger ga-grainger'
+        'ga-gamut ga-gamut'
+        'ga-amazon ga-amazon';
 }
 
 .promotion-note {
@@ -95,7 +93,7 @@ main {
 }
 
 h1 {
-    font-family: "Bookman Old Style";
+    font-family: 'Bookman Old Style';
     font-size: 48px;
     margin: auto;
     text-align: center;
@@ -143,7 +141,7 @@ main > div > h3 {
 }
 
 .darkgreen {
-    color:#005F65;
+    color: #005f65;
 }
 
 .spacer {
@@ -159,7 +157,7 @@ main > div > h3 {
 }
 
 .resume-nav a {
-    color: #005F65;
+    color: #005f65;
     text-decoration: none;
 }
 
