@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ron Fleming — Full-Stack Software Developer</title>
+        <meta
+            name="description"
+            content="CV of Ron Fleming, Full-Stack Software Developer specializing in C#/.NET and Angular. Currently Senior Software Developer at biBerk (Berkshire Hathaway)."
+        />
+        <meta name="robots" content="noindex, nofollow" />
+
+        <!-- Favicons -->
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+        <style>
+            :root {
+                --fg: #1a1a1a;
+                --muted: #555;
+                --accent: #2563eb;
+                --accent-light: #3b82f6;
+                --rule: #e5e7eb;
+                --bg: #fff;
+            }
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: 'Segoe UI', Calibri, Arial, sans-serif;
+                font-size: 11pt;
+                line-height: 1.5;
+                color: var(--fg);
+                background: var(--bg);
+                padding: 40px;
+            }
+
+            .cv {
+                max-width: 850px;
+                margin: 0 auto;
+            }
+
+            /* Header */
+            .cv-header {
+                display: grid;
+                grid-template-columns: 1fr 100px;
+                gap: 24px;
+                margin-bottom: 28px;
+            }
+
+            .cv-name {
+                font-size: 32px;
+                font-weight: 700;
+                color: var(--fg);
+                margin: 0 0 4px 0;
+            }
+
+            .cv-role {
+                font-size: 16px;
+                color: var(--accent);
+                font-weight: 500;
+                margin: 0 0 16px 0;
+            }
+
+            .contact-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 4px 32px;
+                font-size: 10.5pt;
+            }
+
+            .contact-grid dt {
+                font-weight: 600;
+                color: var(--muted);
+            }
+
+            .contact-grid dd {
+                margin: 0;
+            }
+
+            .contact-grid a {
+                color: var(--accent);
+                text-decoration: none;
+            }
+
+            .contact-grid a:hover {
+                text-decoration: underline;
+            }
+
+            .photo-placeholder {
+                width: 100px;
+                height: 130px;
+                border: 2px dashed var(--rule);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 9px;
+                color: var(--muted);
+                text-align: center;
+                padding: 8px;
+                border-radius: 4px;
+            }
+
+            /* Sections */
+            .section {
+                margin-bottom: 24px;
+            }
+
+            .section-title {
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--fg);
+                border-bottom: 2px solid var(--fg);
+                padding-bottom: 4px;
+                margin-bottom: 12px;
+            }
+
+            /* Professional Profile */
+            .profile-text {
+                line-height: 1.6;
+            }
+
+            /* Primary Stack */
+            .primary-stack {
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+
+            .stack-tag {
+                background: var(--accent);
+                color: white;
+                padding: 4px 12px;
+                border-radius: 4px;
+                font-size: 10.5pt;
+                font-weight: 500;
+            }
+
+            /* Work History */
+            .job {
+                margin-bottom: 20px;
+            }
+
+            .job-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                margin-bottom: 2px;
+            }
+
+            .job-title {
+                font-size: 13pt;
+                font-weight: 700;
+                color: var(--accent);
+            }
+
+            .job-date {
+                font-weight: 600;
+                color: var(--muted);
+                font-size: 10.5pt;
+                white-space: nowrap;
+            }
+
+            .job-company {
+                font-weight: 600;
+                margin-bottom: 2px;
+            }
+
+            .job-company a {
+                color: var(--fg);
+                text-decoration: none;
+            }
+
+            .job-company a:hover {
+                color: var(--accent);
+            }
+
+            .job-location {
+                color: var(--muted);
+                font-size: 10.5pt;
+                margin-bottom: 4px;
+            }
+
+            .job-description {
+                color: var(--muted);
+                font-size: 10.5pt;
+                font-style: italic;
+                margin-bottom: 6px;
+            }
+
+            .job-stack {
+                font-size: 10pt;
+                margin-bottom: 8px;
+            }
+
+            .job-stack strong {
+                color: var(--muted);
+            }
+
+            .job ul {
+                margin: 6px 0 0 20px;
+                padding: 0;
+            }
+
+            .job li {
+                margin-bottom: 4px;
+            }
+
+            /* Nested titles within a company (for multi-role entries like biBerk) */
+            .company-group {
+                margin-bottom: 20px;
+            }
+
+            .company-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                margin-bottom: 2px;
+            }
+
+            .company-name {
+                font-size: 13pt;
+                font-weight: 700;
+                color: var(--fg);
+            }
+
+            .company-date {
+                font-weight: 600;
+                color: var(--muted);
+                font-size: 10.5pt;
+            }
+
+            .role-entry {
+                margin-top: 14px;
+            }
+
+            .role-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+            }
+
+            .role-title {
+                font-size: 12pt;
+                font-weight: 600;
+                color: var(--accent);
+            }
+
+            .role-date {
+                color: var(--muted);
+                font-size: 10pt;
+            }
+
+            .role-entry ul {
+                margin: 4px 0 0 20px;
+                padding: 0;
+            }
+
+            /* Education */
+            .edu-entry {
+                margin-bottom: 12px;
+            }
+
+            .edu-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+            }
+
+            .edu-degree {
+                font-weight: 600;
+            }
+
+            .edu-date {
+                color: var(--muted);
+                font-size: 10.5pt;
+            }
+
+            .edu-school {
+                color: var(--muted);
+                font-size: 10.5pt;
+            }
+
+            /* Skills */
+            .skills-list {
+                list-style: disc;
+                margin-left: 20px;
+            }
+
+            .skills-list li {
+                margin-bottom: 4px;
+            }
+
+            /* Languages */
+            .languages-grid {
+                display: grid;
+                grid-template-columns: 100px 1fr;
+                gap: 4px 16px;
+            }
+
+            .languages-grid dt {
+                font-weight: 600;
+            }
+
+            .languages-grid dd {
+                color: var(--muted);
+            }
+
+            /* Print */
+            @media print {
+                body {
+                    padding: 0;
+                    font-size: 10.5pt;
+                }
+
+                .cv {
+                    max-width: none;
+                }
+
+                .photo-placeholder {
+                    border-style: solid;
+                }
+
+                .stack-tag {
+                    border: 1px solid var(--accent);
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                .cv-header {
+                    grid-template-columns: 1fr;
+                }
+
+                .photo-placeholder {
+                    justify-self: center;
+                }
+
+                .contact-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .job-header,
+                .edu-header,
+                .job-role-header {
+                    flex-direction: column;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="cv">
+            <!-- Header -->
+            <header class="cv-header">
+                <div>
+                    <h1 class="cv-name">Ron Fleming</h1>
+                    <p class="cv-role">Full-Stack Software Developer</p>
+
+                    <dl class="contact-grid">
+                        <dt>Address</dt>
+                        <dd>[Your Address]</dd>
+
+                        <dt>Phone</dt>
+                        <dd>+1 717 926 8198</dd>
+
+                        <dt>Email</dt>
+                        <dd><a href="mailto:ronfleming71@gmail.com">ronfleming71@gmail.com</a></dd>
+
+                        <dt>Date of Birth</dt>
+                        <dd>August 18, 1971</dd>
+
+                        <dt>Nationality</dt>
+                        <dd>United States</dd>
+
+                        <dt>LinkedIn</dt>
+                        <dd><a href="https://linkedin.com/in/ron-fleming">linkedin.com/in/ron-fleming</a></dd>
+
+                        <dt>Website</dt>
+                        <dd><a href="https://ronfleming.com">ronfleming.com</a></dd>
+
+                        <dt>GitHub</dt>
+                        <dd><a href="https://github.com/ronfleming">github.com/ronfleming</a></dd>
+                    </dl>
+                </div>
+
+                <div class="photo-placeholder">Photo</div>
+            </header>
+
+            <!-- Professional Profile -->
+            <section class="section">
+                <h2 class="section-title">Professional Profile</h2>
+                <p class="profile-text">
+                    Full-Stack Software Developer with 3.5+ years of professional experience
+                    specializing in C#/.NET and Angular. Currently building enterprise insurance
+                    software at biBerk (Berkshire Hathaway), delivering 96+ production features
+                    for policy workflow automation, data analytics, and partner API integrations.
+                    Strong testing practices (NUnit, Moq) and architecture background (Clean Architecture, CQRS).
+                    US Army veteran. English (native), German (B1, pursuing C1).
+                </p>
+            </section>
+
+            <!-- Primary Stack -->
+            <section class="section">
+                <h2 class="section-title">Primary Stack</h2>
+                <div class="primary-stack">
+                    <span class="stack-tag">C#</span>
+                    <span class="stack-tag">.NET</span>
+                    <span class="stack-tag">Angular</span>
+                    <span class="stack-tag">SQL Server</span>
+                    <span class="stack-tag">Azure</span>
+                </div>
+            </section>
+
+            <!-- Work History -->
+            <section class="section">
+                <h2 class="section-title">Work History</h2>
+
+                <!-- biBerk (multi-role) -->
+                <div class="company-group">
+                    <div class="company-header">
+                        <span class="company-name">biBerk (Berkshire Hathaway)</span>
+                        <span class="company-date">09/2023 – present</span>
+                    </div>
+                    <p class="job-company">Omaha, NE, USA (Remote)</p>
+                    <p class="job-description">
+                        Small business insurance provider, subsidiary of Berkshire Hathaway
+                    </p>
+                    <p class="job-stack">
+                        <strong>Tech stack:</strong> C#, .NET Core, Entity Framework, Angular, Aurelia, SQL Server
+                    </p>
+
+                    <div class="role-entry">
+                        <div class="role-header">
+                            <span class="role-title">Senior Software Developer</span>
+                            <span class="role-date">04/2025 – present</span>
+                        </div>
+                        <ul>
+                            <li>Lead refinement, planning, and retrospective sessions; approve code reviews.</li>
+                        </ul>
+                    </div>
+
+                    <div class="role-entry">
+                        <div class="role-header">
+                            <span class="role-title">Software Developer</span>
+                            <span class="role-date">04/2024 – 04/2025</span>
+                        </div>
+                        <ul>
+                            <li>Built PurchasePathAutomator — a Blazor WASM tool with Playwright browser automation and real-time SSE streaming to automate insurance purchase path testing.</li>
+                        </ul>
+                    </div>
+
+                    <div class="role-entry">
+                        <div class="role-header">
+                            <span class="role-title">Associate Software Developer</span>
+                            <span class="role-date">09/2023 – 04/2024</span>
+                        </div>
+                        <ul>
+                            <li>Built full-stack features for Workers' Compensation and Professional Liability quote systems using C#/.NET Core, EF Core, Aurelia, and Angular.</li>
+                            <li>Write and maintain unit tests using NUnit, FluentAssertions, and Moq.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- MadeLabs -->
+                <div class="job">
+                    <div class="job-header">
+                        <span class="job-title">Software Developer</span>
+                        <span class="job-date">07/2021 – 08/2023</span>
+                    </div>
+                    <p class="job-company">MadeLabs | USA (Remote)</p>
+                    <p class="job-description">
+                        Software consultancy specializing in aviation and project management software
+                    </p>
+                    <p class="job-stack">
+                        <strong>Tech stack:</strong> C#, ASP.NET, SQL Server, Angular, React.js, PostgreSQL
+                    </p>
+                    <p class="job-location" style="font-style: italic; margin-bottom: 8px;">
+                        Hired as contractor; promoted to FTE 07/2022
+                    </p>
+                    <ul>
+                        <li>Built full-stack features for ATP Flightdocs (now Veryon) aircraft maintenance, inventory, and operations software.</li>
+                        <li>Implemented tracking, reporting, and alerting features following CQRS and Event Sourcing patterns.</li>
+                        <li>Contributed to MadeLabs' Fairview project management software using C#, PostgreSQL, and React.js.</li>
+                    </ul>
+                </div>
+
+                <!-- Grainger -->
+                <div class="job">
+                    <div class="job-header">
+                        <span class="job-title">Senior Site Editor</span>
+                        <span class="job-date">11/2018 – 02/2021</span>
+                    </div>
+                    <p class="job-company">Grainger | Lake Forest, IL, USA</p>
+                    <p class="job-description">
+                        Industrial supply distributor and e-commerce company
+                    </p>
+                    <p class="job-stack">
+                        <strong>Tech stack:</strong> VBA, Power Automate, Domo
+                    </p>
+                    <ul>
+                        <li>Built VBA tools to automate merchandising QA, content generation, and cross-functional reporting.</li>
+                        <li>Created data integrations using Power Automate and Domo to eliminate duplicate effort across teams.</li>
+                    </ul>
+                </div>
+
+                <!-- Gamut -->
+                <div class="job">
+                    <div class="job-header">
+                        <span class="job-title">QA Analyst (Contractor)</span>
+                        <span class="job-date">10/2016 – 11/2018</span>
+                    </div>
+                    <p class="job-company">Gamut (Grainger) | Chicago, IL, USA</p>
+                    <p class="job-description">
+                        E-commerce startup within Grainger
+                    </p>
+                    <p class="job-stack">
+                        <strong>Tech stack:</strong> VBA, Excel
+                    </p>
+                    <ul>
+                        <li>Developed VBA process tools for merchandising publication workflow; trained incoming analysts.</li>
+                    </ul>
+                </div>
+
+                <!-- Amazon -->
+                <div class="job">
+                    <div class="job-header">
+                        <span class="job-title">Content Developer / VBA Developer (Contractor)</span>
+                        <span class="job-date">05/2013 – 11/2015</span>
+                    </div>
+                    <p class="job-company">Amazon | Seattle, WA, USA</p>
+                    <p class="job-description">
+                        Global e-commerce and technology company
+                    </p>
+                    <p class="job-stack">
+                        <strong>Tech stack:</strong> VBA, Excel
+                    </p>
+                    <ul>
+                        <li>Automated product description generation using VBA, enabling batch processing of thousands of SKUs.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+
+                <div class="edu-entry">
+                    <div class="edu-header">
+                        <span class="edu-degree">Full-Stack Coding Bootcamp (Java/SQL/Vue.js)</span>
+                        <span class="edu-date">03/2021 – 06/2021</span>
+                    </div>
+                    <p class="edu-school">Tech Elevator, National Live Remote Campus</p>
+                </div>
+
+                <div class="edu-entry">
+                    <div class="edu-header">
+                        <span class="edu-degree">Master's Degree, Political Science</span>
+                        <span class="edu-date">1998</span>
+                    </div>
+                    <p class="edu-school">Villanova University, Villanova, PA, USA</p>
+                </div>
+
+                <div class="edu-entry">
+                    <div class="edu-header">
+                        <span class="edu-degree">Bachelor's Degree, Ed. Social Studies</span>
+                        <span class="edu-date">1997</span>
+                    </div>
+                    <p class="edu-school">Millersville University, Millersville, PA, USA</p>
+                </div>
+            </section>
+
+            <!-- Additional Skills & Interests -->
+            <section class="section">
+                <h2 class="section-title">Additional Skills & Interests</h2>
+                <ul class="skills-list">
+                    <li><strong>Testing:</strong> NUnit, FluentAssertions, Moq, AutoFixture, FluentValidation</li>
+                    <li><strong>Architecture:</strong> Clean Architecture, CQRS, Domain-Driven Design, Event Sourcing</li>
+                    <li><strong>Tools:</strong> Visual Studio, VS Code, Cursor, GitHub Copilot, SSMS, Git</li>
+                    <li><strong>Also used:</strong> Blazor WASM, React.js, Aurelia, PostgreSQL</li>
+                    <li><strong>Military:</strong> US Army Veteran (08/1989 – 08/1993)</li>
+                </ul>
+            </section>
+
+            <!-- Languages -->
+            <section class="section">
+                <h2 class="section-title">Languages</h2>
+                <dl class="languages-grid">
+                    <dt>English</dt>
+                    <dd>Native</dd>
+
+                    <dt>German</dt>
+                    <dd>B1 (pursuing C1)</dd>
+                </dl>
+            </section>
+        </div>
+    </body>
+</html>
+

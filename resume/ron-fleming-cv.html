@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ron Fleming — CV</title>
+        <meta
+            name="description"
+            content="Lebenslauf von Ron Fleming, Full-Stack-Softwareentwickler (C#/.NET, Angular). Derzeit Senior Softwareentwickler bei biBerk (Berkshire Hathaway)."
+        />
+        <meta name="robots" content="noindex, nofollow" />
+
+        <!-- Favicons -->
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="/favicon-96x96.png"
+        />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+        <style>
+            :root {
+                --fg: #1a1a1a;
+                --muted: #555;
+                --accent: #005f65;
+                --rule: #ccc;
+                --bg: #fff;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Segoe UI', Calibri, Arial, sans-serif;
+                font-size: 11pt;
+                line-height: 1.45;
+                color: var(--fg);
+                background: var(--bg);
+                margin: 0;
+                padding: 40px;
+            }
+
+            .lebenslauf {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            /* Header with photo placeholder */
+            .cv-header {
+                display: grid;
+                grid-template-columns: 1fr 120px;
+                gap: 24px;
+                margin-bottom: 24px;
+            }
+
+            .cv-title {
+                font-size: 28px;
+                font-weight: 600;
+                color: var(--accent);
+                margin: 0 0 16px 0;
+                letter-spacing: 0.5px;
+            }
+
+            .photo-placeholder {
+                width: 120px;
+                height: 150px;
+                border: 2px dashed var(--rule);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 10px;
+                color: var(--muted);
+                text-align: center;
+                padding: 8px;
+            }
+
+            /* Section styling */
+            .cv-section {
+                margin-bottom: 20px;
+            }
+
+            .cv-section h2 {
+                font-size: 13px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: var(--accent);
+                border-bottom: 2px solid var(--accent);
+                padding-bottom: 4px;
+                margin: 0 0 12px 0;
+            }
+
+            /* Personal data table */
+            .personal-data {
+                display: grid;
+                grid-template-columns: 140px 1fr;
+                gap: 4px 16px;
+            }
+
+            .personal-data dt {
+                font-weight: 600;
+                color: var(--muted);
+            }
+
+            .personal-data dd {
+                margin: 0;
+            }
+
+            .personal-data a {
+                color: var(--fg);
+                text-decoration: none;
+                border-bottom: 1px solid var(--rule);
+            }
+
+            .personal-data a:hover {
+                border-bottom-color: var(--accent);
+            }
+
+            /* Experience entries */
+            .cv-entry {
+                margin-bottom: 14px;
+            }
+
+            .cv-entry-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                margin-bottom: 2px;
+            }
+
+            .cv-entry-title {
+                font-weight: 700;
+                font-size: 11.5pt;
+            }
+
+            .cv-entry-date {
+                font-weight: 600;
+                color: var(--muted);
+                white-space: nowrap;
+            }
+
+            .cv-entry-subtitle {
+                color: var(--muted);
+                font-style: italic;
+                margin-bottom: 4px;
+            }
+
+            .cv-entry ul {
+                margin: 4px 0 0 18px;
+                padding: 0;
+            }
+
+            .cv-entry li {
+                margin-bottom: 3px;
+            }
+
+            /* Skills grid */
+            .skills-grid {
+                display: grid;
+                grid-template-columns: 140px 1fr;
+                gap: 6px 16px;
+            }
+
+            .skills-grid dt {
+                font-weight: 600;
+            }
+
+            .skills-grid dd {
+                margin: 0;
+                color: var(--muted);
+            }
+
+            /* Signature area */
+            .signature-area {
+                margin-top: 40px;
+                padding-top: 20px;
+                border-top: 1px solid var(--rule);
+            }
+
+            .signature-line {
+                margin-top: 50px;
+                width: 250px;
+                border-top: 1px solid var(--fg);
+                padding-top: 4px;
+                font-size: 10pt;
+                color: var(--muted);
+            }
+
+            /* Print styles */
+            @media print {
+                body {
+                    padding: 0;
+                    font-size: 10.5pt;
+                }
+
+                .lebenslauf {
+                    max-width: none;
+                }
+
+                .photo-placeholder {
+                    border-style: solid;
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                .cv-header {
+                    grid-template-columns: 1fr;
+                }
+
+                .photo-placeholder {
+                    justify-self: center;
+                }
+
+                .cv-entry-header {
+                    flex-direction: column;
+                }
+
+                .skills-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="lebenslauf">
+            <header class="cv-header">
+                <div>
+                    <h1 class="cv-title">Ron Fleming</h1>
+
+                    <section class="cv-section">
+                        <h2>Persönliche Daten</h2>
+                        <dl class="personal-data">
+                            <dt>Geburtsdatum</dt>
+                            <dd>18.08.1971</dd>
+
+                            <dt>Geburtsort</dt>
+                            <dd>Bradford, PA, USA</dd>
+
+                            <dt>Staatsangehörigkeit</dt>
+                            <dd>US-amerikanisch</dd>
+
+                            <dt>Telefon</dt>
+                            <dd>+1 717 926 8198</dd>
+
+                            <dt>E-Mail</dt>
+                            <dd>
+                                <a href="mailto:ronfleming71@gmail.com"
+                                    >ronfleming71@gmail.com</a
+                                >
+                            </dd>
+
+                            <dt>GitHub</dt>
+                            <dd>
+                                <a href="https://github.com/ronfleming"
+                                    >github.com/ronfleming</a
+                                >
+                            </dd>
+
+                            <dt>LinkedIn</dt>
+                            <dd>
+                                <a href="https://linkedin.com/in/ron-fleming"
+                                    >linkedin.com/in/ron-fleming</a
+                                >
+                            </dd>
+                        </dl>
+                    </section>
+                </div>
+
+                <div class="photo-placeholder">
+                    Bewerbungsfoto hier einfügen
+                </div>
+            </header>
+
+            <section class="cv-section">
+                <h2>Technische Kenntnisse</h2>
+                <dl class="skills-grid">
+                    <dt>Kern</dt>
+                    <dd>
+                        C#, .NET / ASP.NET Core, Entity Framework Core,
+                        TypeScript, JavaScript, Angular, SQL, Git
+                    </dd>
+
+                    <dt>Auch eingesetzt</dt>
+                    <dd>Blazor WASM, React.js, Aurelia</dd>
+
+                    <dt>Datenbanken</dt>
+                    <dd>SQL Server, PostgreSQL</dd>
+
+                    <dt>Cloud</dt>
+                    <dd>Azure (Hosting, Konfiguration)</dd>
+
+                    <dt>Testing</dt>
+                    <dd>NUnit, FluentAssertions, Moq, AutoFixture</dd>
+
+                    <dt>Architektur</dt>
+                    <dd>
+                        Clean Architecture, CQRS, Domain-Driven Design, Event
+                        Sourcing, Agile/Scrum
+                    </dd>
+
+                    <dt>Werkzeuge</dt>
+                    <dd>
+                        Visual Studio, VS Code, Cursor, GitHub Copilot, SSMS
+                    </dd>
+                </dl>
+            </section>
+
+            <section class="cv-section">
+                <h2>Sprachkenntnisse</h2>
+                <dl class="skills-grid">
+                    <dt>Englisch</dt>
+                    <dd>Muttersprache</dd>
+
+                    <dt>Deutsch</dt>
+                    <dd>B1 (C1 angestrebt)</dd>
+                </dl>
+            </section>
+
+            <section class="cv-section">
+                <h2>Berufserfahrung</h2>
+
+                <div class="cv-entry">
+                    <div class="cv-entry-header">
+                        <span class="cv-entry-title"
+                            >biBerk (Berkshire Hathaway)</span
+                        >
+                        <span class="cv-entry-date">09/2023 – heute</span>
+                    </div>
+                    <div class="cv-entry-subtitle">
+                        Omaha, NE, USA (Remote)
+                    </div>
+
+                    <div class="cv-entry-header" style="margin-top: 14px;">
+                        <span style="font-style: italic; font-weight: 600;">Senior Softwareentwickler</span>
+                        <span class="cv-entry-date">04/2025 – heute</span>
+                    </div>
+                    <ul>
+                        <li>
+                            Leitung von Refinement-, Planungs- und
+                            Retrospektiv-Sitzungen; Genehmigung von Code
+                            Reviews.
+                        </li>
+                    </ul>
+
+                    <div class="cv-entry-header" style="margin-top: 12px;">
+                        <span style="font-style: italic; font-weight: 600;">Softwareentwickler</span>
+                        <span class="cv-entry-date">04/2024 – 04/2025</span>
+                    </div>
+                    <ul>
+                        <li>
+                            Entwicklung eines internen Blazor WASM-Tools zur
+                            Automatisierung der Navigation durch den Kaufpfad.
+                        </li>
+                    </ul>
+
+                    <div class="cv-entry-header" style="margin-top: 12px;">
+                        <span style="font-style: italic; font-weight: 600;">Associate Softwareentwickler</span>
+                        <span class="cv-entry-date">09/2023 – 04/2024</span>
+                    </div>
+                    <ul>
+                        <li>
+                            Entwicklung und Wartung von Full-Stack-Funktionen
+                            für Workers' Compensation und Professional Liability
+                            Angebotssysteme mit C#/.NET Core, EF Core, Aurelia
+                            und Angular.
+                        </li>
+                        <li>
+                            Erstellung und Wartung von Unit-Tests mit NUnit,
+                            FluentAssertions und Moq.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="cv-entry">
+                    <div class="cv-entry-header">
+                        <span class="cv-entry-title">Softwareentwickler</span>
+                        <span class="cv-entry-date">07/2021 – 08/2023</span>
+                    </div>
+                    <div class="cv-entry-subtitle">MadeLabs, USA (Remote)</div>
+                    <p class="cv-entry-subtitle">
+                        Als Auftragnehmer eingestellt; zum FTE befördert 07/2022
+                    </p>
+                    <ul>
+                        <li>
+                            Entwicklung von Full-Stack-Funktionen für ATP
+                            Flightdocs (jetzt Veryon) Flugzeugwartungs-,
+                            Bestands- und Betriebssoftware mit C#, ASP.NET, SQL
+                            Server und Angular.
+                        </li>
+                        <li>
+                            Implementierung von Tracking-, Reporting- und
+                            Alarmierungsfunktionen nach CQRS- und Event
+                            Sourcing-Mustern.
+                        </li>
+                        <li>
+                            Mitarbeit an MadeLabs' Fairview
+                            Projektmanagement-Software mit C#, PostgreSQL und
+                            React.js.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="cv-entry">
+                    <div class="cv-entry-header">
+                        <span class="cv-entry-title">Senior Site Editor</span>
+                        <span class="cv-entry-date">11/2018 – 02/2021</span>
+                    </div>
+                    <div class="cv-entry-subtitle">
+                        Grainger, Lake Forest, IL, USA
+                    </div>
+                    <ul>
+                        <li>
+                            Entwicklung von VBA-Tools zur Automatisierung von
+                            Merchandising-QA, Content-Generierung und
+                            bereichsübergreifendem Reporting.
+                        </li>
+                        <li>
+                            Erstellung von Datenintegrationen mit Power Automate
+                            und Domo zur Eliminierung von Doppelarbeit zwischen
+                            Teams.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="cv-entry">
+                    <div class="cv-entry-header">
+                        <span class="cv-entry-title"
+                            >QA Analyst (Auftragnehmer)</span
+                        >
+                        <span class="cv-entry-date">10/2016 – 11/2018</span>
+                    </div>
+                    <div class="cv-entry-subtitle">
+                        Gamut (Grainger), Chicago, IL, USA
+                    </div>
+                    <ul>
+                        <li>
+                            Entwicklung von VBA-Prozesstools für den
+                            Merchandising-Publikations-Workflow; Schulung neuer
+                            Analysten.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="cv-entry">
+                    <div class="cv-entry-header">
+                        <span class="cv-entry-title"
+                            >Content Developer / VBA Developer
+                            (Auftragnehmer)</span
+                        >
+                        <span class="cv-entry-date">05/2013 – 11/2015</span>
+                    </div>
+                    <div class="cv-entry-subtitle">
+                        Amazon, Seattle, WA, USA
+                    </div>
+                    <ul>
+                        <li>
+                            Automatisierung der Produktbeschreibungsgenerierung
+                            mit VBA, wodurch die Stapelverarbeitung von
+                            Tausenden von SKUs ermöglicht wurde.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2>Ausbildung</h2>
+
+                <div class="cv-entry">
+                    <div class="cv-entry-header">
+                        <span class="cv-entry-title"
+                            >Full-Stack Coding Bootcamp (Java/SQL/Vue.js)</span
+                        >
+                        <span class="cv-entry-date">03/2021 – 06/2021</span>
+                    </div>
+                    <div class="cv-entry-subtitle">
+                        Tech Elevator, National Live Remote Campus
+                    </div>
+                </div>
+
+                <div class="cv-entry">
+                    <div class="cv-entry-header">
+                        <span class="cv-entry-title"
+                            >Master-Abschluss, Politikwissenschaft</span
+                        >
+                        <span class="cv-entry-date">1998</span>
+                    </div>
+                    <div class="cv-entry-subtitle">
+                        Villanova University, Villanova, PA, USA
+                    </div>
+                </div>
+
+                <div class="cv-entry">
+                    <div class="cv-entry-header">
+                        <span class="cv-entry-title"
+                            >Bachelor-Abschluss, Lehramt
+                            Sozialwissenschaften</span
+                        >
+                        <span class="cv-entry-date">1997</span>
+                    </div>
+                    <div class="cv-entry-subtitle">
+                        Millersville University, Millersville, PA, USA
+                    </div>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2>Wehrdienst</h2>
+                <div class="cv-entry">
+                    <div class="cv-entry-header">
+                        <span class="cv-entry-title">US Army</span>
+                        <span class="cv-entry-date">08/1989 – 08/1993</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2>Projekte</h2>
+
+                <div class="cv-entry">
+                    <div class="cv-entry-header">
+                        <span class="cv-entry-title">Wal-O-Mat</span>
+                    </div>
+                    <div class="cv-entry-subtitle">
+                        <a href="https://wal-o-mat.net">wal-o-mat.net</a>
+                    </div>
+                    <p>
+                        Persönlichkeitsquiz-Parodie des deutschen Wahl-O-Mat,
+                        entwickelt mit C# und Blazor WASM, gehostet auf Azure.
+                    </p>
+                </div>
+            </section>
+
+            <div class="signature-area">
+                <p>[Ort], den [Datum]</p>
+                <div class="signature-line">Ron Fleming</div>
+            </div>
+        </div>
+    </body>
+</html>
