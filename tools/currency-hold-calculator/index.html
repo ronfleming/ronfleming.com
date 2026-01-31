@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Currency Hold Calculator | Should You Exchange Now or Wait?
+        </title>
+        <meta
+            name="description"
+            content="Compare holding your money in one currency vs. exchanging now. Calculate whether it's better to earn interest in dollars or euros based on exchange rates and time. A free tool for expats and international planners."
+        />
+        <meta
+            name="keywords"
+            content="currency calculator, exchange rate calculator, expat finance, USD EUR calculator, hold or exchange, international money, expat tools, currency conversion timing, interest rate comparison"
+        />
+        <meta name="author" content="Ron Fleming" />
+        <link
+            rel="canonical"
+            href="https://ronfleming.com/tools/currency-hold-calculator/"
+        />
+
+        <!-- Favicons -->
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:title"
+            content="Currency Hold Calculator | Should You Exchange Now or Wait?"
+        />
+        <meta
+            property="og:description"
+            content="Compare holding your money in one currency vs. exchanging now. A free tool for expats and international planners."
+        />
+        <meta
+            property="og:url"
+            content="https://ronfleming.com/tools/currency-hold-calculator/"
+        />
+        <meta property="og:site_name" content="Ron Fleming" />
+        <meta
+            property="og:image"
+            content="https://ronfleming.com/tools/currency-hold-calculator/og-image.svg"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Currency Hold Calculator | Should You Exchange Now or Wait?"
+        />
+        <meta
+            name="twitter:description"
+            content="Compare holding your money in one currency vs. exchanging now. A free tool for expats and international planners."
+        />
+        <meta
+            name="twitter:image"
+            content="https://ronfleming.com/tools/currency-hold-calculator/og-image.svg"
+        />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="styles.css" />
+
+        <!-- JSON-LD Structured Data -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebApplication",
+                "name": "Currency Hold Calculator",
+                "description": "Compare holding your money in one currency vs. exchanging now. Calculate whether it's better to earn interest in dollars or euros based on exchange rates and time.",
+                "url": "https://ronfleming.com/tools/currency-hold-calculator/",
+                "applicationCategory": "FinanceApplication",
+                "operatingSystem": "Any",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Ron Fleming",
+                    "url": "https://ronfleming.com"
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <header class="site-header">
+                <nav class="site-nav" aria-label="Main navigation">
+                    <a href="/">← Ron Fleming</a>
+                </nav>
+                <h1 class="page-title">
+                    Currency <span class="accent">Hold</span> Calculator
+                </h1>
+                <p class="intro">
+                    Thinking of exchanging dollars for euros (or the other way
+                    around)? This tool helps you compare two options: hold your
+                    money in its current currency and earn interest, then
+                    exchange later—or exchange now and earn interest in the new
+                    currency. Plug in your numbers, and we'll show you which
+                    path puts more money in your pocket.
+                </p>
+            </header>
+
+            <main>
+                <form id="calculator-form" class="calculator-form">
+                    <!-- Currency Direction -->
+                    <fieldset class="form-section">
+                        <legend class="section-label">I currently have</legend>
+                        <div class="toggle-group">
+                            <label class="toggle-option">
+                                <input
+                                    type="radio"
+                                    name="currency-direction"
+                                    value="usd-to-eur"
+                                    checked
+                                />
+                                <span class="toggle-label">
+                                    <span class="flag" aria-hidden="true"
+                                        >🇺🇸</span
+                                    >
+                                    US Dollars
+                                </span>
+                            </label>
+                            <label class="toggle-option">
+                                <input
+                                    type="radio"
+                                    name="currency-direction"
+                                    value="eur-to-usd"
+                                />
+                                <span class="toggle-label">
+                                    <span class="flag" aria-hidden="true"
+                                        >🇪🇺</span
+                                    >
+                                    Euros
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Amount -->
+                    <div class="form-group">
+                        <label for="amount" class="form-label">Amount</label>
+                        <div class="input-with-prefix">
+                            <span class="input-prefix" id="amount-prefix"
+                                >$</span
+                            >
+                            <input
+                                type="number"
+                                id="amount"
+                                name="amount"
+                                min="0"
+                                step="0.01"
+                                value="10000"
+                                required
+                                aria-describedby="amount-help"
+                            />
+                        </div>
+                        <p class="help-text" id="amount-help">
+                            How much you're starting with
+                        </p>
+                    </div>
+
+                    <!-- Interest Rates -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="rate-current" class="form-label">
+                                <span id="rate-current-label">USD</span>
+                                interest rate
+                            </label>
+                            <div class="input-with-suffix">
+                                <input
+                                    type="number"
+                                    id="rate-current"
+                                    name="rate-current"
+                                    min="0"
+                                    max="100"
+                                    step="0.01"
+                                    value="3.5"
+                                    required
+                                    aria-describedby="rate-current-help"
+                                />
+                                <span class="input-suffix">%</span>
+                            </div>
+                            <p class="help-text" id="rate-current-help">
+                                Annual rate, e.g. 3.5
+                            </p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rate-target" class="form-label">
+                                <span id="rate-target-label">EUR</span> interest
+                                rate
+                            </label>
+                            <div class="input-with-suffix">
+                                <input
+                                    type="number"
+                                    id="rate-target"
+                                    name="rate-target"
+                                    min="0"
+                                    max="100"
+                                    step="0.01"
+                                    value="1.0"
+                                    required
+                                    aria-describedby="rate-target-help"
+                                />
+                                <span class="input-suffix">%</span>
+                            </div>
+                            <p class="help-text" id="rate-target-help">
+                                Annual rate, e.g. 1.0
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Exchange Rates -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="exchange-now" class="form-label"
+                                >Exchange rate today</label
+                            >
+                            <div class="input-with-context">
+                                <input
+                                    type="number"
+                                    id="exchange-now"
+                                    name="exchange-now"
+                                    min="0"
+                                    step="0.0001"
+                                    value="0.84"
+                                    required
+                                    aria-describedby="exchange-now-help"
+                                />
+                            </div>
+                            <p class="help-text" id="exchange-now-help">
+                                <span id="exchange-now-example"
+                                    >e.g. 0.84 means $1 = €0.84</span
+                                >
+                            </p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exchange-future" class="form-label"
+                                >Expected future rate</label
+                            >
+                            <div class="input-with-context">
+                                <input
+                                    type="number"
+                                    id="exchange-future"
+                                    name="exchange-future"
+                                    min="0"
+                                    step="0.0001"
+                                    value="0.80"
+                                    required
+                                    aria-describedby="exchange-future-help"
+                                />
+                            </div>
+                            <p class="help-text" id="exchange-future-help">
+                                <span id="exchange-future-example"
+                                    >Your best guess for later</span
+                                >
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Time Period -->
+                    <div class="form-group">
+                        <label class="form-label">Time period</label>
+                        <div class="time-inputs">
+                            <select
+                                id="time-value"
+                                name="time-value"
+                                aria-label="Number of time units"
+                            >
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6" selected>6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="18">18</option>
+                                <option value="24">24</option>
+                                <option value="36">36</option>
+                            </select>
+                            <select
+                                id="time-unit"
+                                name="time-unit"
+                                aria-label="Time unit"
+                            >
+                                <option value="months" selected>months</option>
+                                <option value="years">years</option>
+                            </select>
+                        </div>
+                        <p class="help-text">How long you plan to hold</p>
+                    </div>
+
+                    <!-- Compounding -->
+                    <fieldset class="form-section">
+                        <legend class="section-label">
+                            Interest compounding
+                        </legend>
+                        <div class="toggle-group">
+                            <label class="toggle-option">
+                                <input
+                                    type="radio"
+                                    name="compounding"
+                                    value="monthly"
+                                    checked
+                                />
+                                <span class="toggle-label">Monthly</span>
+                            </label>
+                            <label class="toggle-option">
+                                <input
+                                    type="radio"
+                                    name="compounding"
+                                    value="annual"
+                                />
+                                <span class="toggle-label">Annual</span>
+                            </label>
+                        </div>
+                        <p class="help-text">
+                            Monthly is typical for savings accounts
+                        </p>
+                    </fieldset>
+
+                    <button type="submit" class="calculate-btn">
+                        Compare Options
+                    </button>
+                </form>
+
+                <!-- Results -->
+                <section id="results" class="results-section" hidden>
+                    <h2 class="results-title">Your Comparison</h2>
+
+                    <div class="verdict" id="verdict">
+                        <!-- Filled by JS -->
+                    </div>
+
+                    <div class="comparison-visual">
+                        <div class="comparison-bar" id="bar-hold">
+                            <div class="bar-label">
+                                <span class="bar-title" id="bar-hold-title"
+                                    >Hold & Exchange Later</span
+                                >
+                                <span class="bar-amount" id="bar-hold-amount"
+                                    >€0</span
+                                >
+                            </div>
+                            <div class="bar-track">
+                                <div
+                                    class="bar-fill bar-fill-hold"
+                                    id="bar-hold-fill"
+                                ></div>
+                            </div>
+                        </div>
+                        <div class="comparison-bar" id="bar-convert">
+                            <div class="bar-label">
+                                <span class="bar-title" id="bar-convert-title"
+                                    >Exchange Now & Hold</span
+                                >
+                                <span class="bar-amount" id="bar-convert-amount"
+                                    >€0</span
+                                >
+                            </div>
+                            <div class="bar-track">
+                                <div
+                                    class="bar-fill bar-fill-convert"
+                                    id="bar-convert-fill"
+                                ></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="breakdown" id="breakdown">
+                        <!-- Filled by JS -->
+                    </div>
+                </section>
+            </main>
+
+            <footer class="site-footer">
+                <p>
+                    Built by <a href="/">Ron Fleming</a> ·
+                    <a
+                        href="https://github.com/ronfleming"
+                        target="_blank"
+                        rel="noopener"
+                        >GitHub</a
+                    >
+                </p>
+                <p class="disclaimer">
+                    This calculator is for educational purposes only. Always
+                    consult a financial advisor for investment decisions.
+                </p>
+            </footer>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#005f65"/>
+  
+  <!-- Currency symbols -->
+  <text x="400" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="200" font-weight="700" fill="#fff" text-anchor="middle">$</text>
+  <text x="800" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="200" font-weight="700" fill="#fff" text-anchor="middle">€</text>
+  
+  <!-- Exchange arrows -->
+  <g stroke="#fff" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M520 240 L680 240"/>
+    <path d="M640 200 L680 240 L640 280"/>
+    <path d="M680 360 L520 360"/>
+    <path d="M560 320 L520 360 L560 400"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="600" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="600" fill="rgba(255,255,255,0.9)" text-anchor="middle">Currency Hold Calculator</text>
+</svg>
+
