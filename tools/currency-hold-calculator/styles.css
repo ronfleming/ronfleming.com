@@ -1,5 +1,5 @@
 /* Currency Hold Calculator - Styles */
-/* Matches ronfleming.com main site aesthetic */
+/* Matches main site aesthetic */
 
 :root {
     --color-bg: #fafaf9;
@@ -13,7 +13,8 @@
     --color-success: #059669;
     --color-success-light: #d1fae5;
     --color-neutral: #6b7280;
-    --font-main: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-main: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        sans-serif;
     --max-width: 640px;
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -188,7 +189,7 @@ main {
 }
 
 /* Inputs */
-input[type="number"],
+input[type='number'],
 select {
     width: 100%;
     padding: var(--spacing-sm);
@@ -201,7 +202,7 @@ select {
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-input[type="number"]:focus,
+input[type='number']:focus,
 select:focus {
     outline: none;
     border-color: var(--color-accent);
@@ -209,13 +210,13 @@ select:focus {
 }
 
 /* Hide number input spinners */
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-input[type="number"] {
+input[type='number'] {
     -moz-appearance: textfield;
 }
 
@@ -421,7 +422,11 @@ input[type="number"] {
 }
 
 .bar-fill-hold {
-    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
+    background: linear-gradient(
+        90deg,
+        var(--color-accent),
+        var(--color-accent-hover)
+    );
 }
 
 .bar-fill-convert {
@@ -532,4 +537,3 @@ input[type="number"] {
         font-size: 1rem;
     }
 }
-
