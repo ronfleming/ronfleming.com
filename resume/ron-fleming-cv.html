@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Ron Fleming — CV</title>
+        <title>Ron Fleming | CV</title>
         <meta
             name="description"
             content="Lebenslauf von Ron Fleming, Full-Stack-Softwareentwickler (C#/.NET, Angular). Derzeit Senior Softwareentwickler bei biBerk (Berkshire Hathaway)."
@@ -12,7 +12,7 @@
         <meta name="robots" content="noindex, nofollow" />
 
         <!-- Favicons -->
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
         <link
             rel="icon"
             type="image/png"
@@ -65,17 +65,19 @@
                 letter-spacing: 0.5px;
             }
 
-            .photo-placeholder {
+            .cv-photo {
                 width: 120px;
-                height: 150px;
-                border: 2px dashed var(--rule);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 10px;
-                color: var(--muted);
-                text-align: center;
-                padding: 8px;
+                height: 120px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+            .relocation-note {
+                font-size: 10pt;
+                color: var(--accent);
+                margin-top: 8px;
+                font-style: italic;
+                line-height: 1.4;
             }
 
             /* Section styling */
@@ -200,10 +202,6 @@
                 .lebenslauf {
                     max-width: none;
                 }
-
-                .photo-placeholder {
-                    border-style: solid;
-                }
             }
 
             @media screen and (max-width: 600px) {
@@ -211,7 +209,7 @@
                     grid-template-columns: 1fr;
                 }
 
-                .photo-placeholder {
+                .cv-photo {
                     justify-self: center;
                 }
 
@@ -241,6 +239,12 @@
                             <dt>Geburtsort</dt>
                             <dd>Bradford, PA, USA</dd>
 
+                            <dt>Adresse</dt>
+                            <dd>
+                                115 Cedar Street, Box 101, Cornwall, PA 17016,
+                                USA
+                            </dd>
+
                             <dt>Staatsangehörigkeit</dt>
                             <dd>US-amerikanisch</dd>
 
@@ -268,12 +272,15 @@
                                 >
                             </dd>
                         </dl>
+                        <p class="relocation-note">
+                            Umzug nach Deutschland (Raum Osnabrück) geplant für
+                            Herbst 2026. Aufenthalts- und Arbeitserlaubnis über
+                            Familiennachzug (deutsche Ehefrau), in Vorbereitung.
+                        </p>
                     </section>
                 </div>
 
-                <div class="photo-placeholder">
-                    Bewerbungsfoto hier einfügen
-                </div>
+                <img src="img/profile.png" alt="Ron Fleming" class="cv-photo" />
             </header>
 
             <section class="cv-section">
@@ -346,8 +353,20 @@
                     <ul>
                         <li>
                             Leitung von Refinement-, Planungs- und
-                            Retrospektiv-Sitzungen; Genehmigung von Code
-                            Reviews.
+                            Retrospektiv-Sitzungen; Genehmigung von Pull
+                            Requests und Code Reviews.
+                        </li>
+                        <li>
+                            Weiterentwicklung des PurchasePathAutomator mithilfe
+                            von KI-gestütztem Tooling (Cursor) mit
+                            Playwright-Browser-Automatisierung und einer
+                            Lernfunktion, die Anfragedaten für schnellen
+                            Szenarioaufbau zwischenspeichert.
+                        </li>
+                        <li>
+                            Evaluation architektonischer Ansätze; Weitergabe
+                            technischen Wissens durch Dokumentation (ADO Wiki,
+                            Microsoft Loop) und teamübergreifendes Mentoring.
                         </li>
                     </ul>
 
@@ -359,29 +378,44 @@
                     </div>
                     <ul>
                         <li>
-                            Entwicklung von PurchasePathAutomator — einem
-                            internen Blazor WASM-Tool mit Playwright
-                            Browser-Automatisierung zur Optimierung der
-                            Navigation durch den Versicherungs-Kaufpfad.
+                            Entwicklung des PurchasePathAutomator, eines
+                            internen Blazor WASM-Tools zur Optimierung der
+                            Navigation durch den Versicherungs-Kaufpfad, wodurch
+                            die Vorbereitungszeit für Entwicklungsaufgaben
+                            reduziert wird.
+                        </li>
+                        <li>
+                            Implementierung von Full-Stack-Funktionen zur
+                            Automatisierung von Underwriting-Entscheidungen im
+                            Angebotssystem, Reduzierung manueller Verweise und
+                            Verbesserung der Angebotsgenauigkeit.
+                        </li>
+                        <li>
+                            Mitwirkung bei der Aurelia-zu-Angular-Migration;
+                            Produktions-Support-Rotationen mit Lösung
+                            produktübergreifender Probleme mittels Application
+                            Insights; Integration von Partner-APIs für
+                            Adressvalidierung.
                         </li>
                     </ul>
 
                     <div class="cv-entry-header" style="margin-top: 12px">
                         <span style="font-style: italic; font-weight: 600"
-                            >Associate Softwareentwickler</span
+                            >Associate (Junior) Softwareentwickler</span
                         >
                         <span class="cv-entry-date">09/2023 – 04/2024</span>
                     </div>
                     <ul>
                         <li>
                             Entwicklung und Wartung von Full-Stack-Funktionen
-                            für Workers' Compensation und Professional Liability
-                            Angebotssysteme mit C#/.NET Core, EF Core, Aurelia
-                            und Angular.
+                            für Versicherungsangebotssysteme mit C#/.NET Core,
+                            Entity Framework Core, Aurelia und Angular.
                         </li>
                         <li>
-                            Erstellung und Wartung von Unit-Tests mit NUnit,
-                            FluentAssertions und Moq.
+                            Entwicklung automatisierter Regeln für
+                            Prämienberechnungen, Compliance-Prüfungen und
+                            Drittanbieter-Datenabfragen; Erstellung von
+                            Unit-Tests mit NUnit, FluentAssertions und Moq.
                         </li>
                     </ul>
                 </div>
@@ -540,7 +574,8 @@
                     </div>
                     <p>
                         Persönlichkeitsquiz-Parodie des deutschen Wahl-O-Mat,
-                        entwickelt mit C# und Blazor WASM, gehostet auf Azure.
+                        entwickelt mit C# und Blazor WASM. Bereitgestellt auf
+                        Azure Static Web Apps mit GitHub Actions CI/CD.
                     </p>
                 </div>
 
@@ -566,7 +601,7 @@
             </section>
 
             <div class="signature-area">
-                <p>[Ort], den [Datum]</p>
+                <p>Cornwall, PA, den [Datum]</p>
                 <div class="signature-line">Ron Fleming</div>
             </div>
         </div>

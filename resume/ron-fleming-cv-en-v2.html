@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Ron Fleming — Full-Stack Software Developer</title>
+        <title>Ron Fleming | Full-Stack Software Developer</title>
         <meta
             name="description"
             content="CV of Ron Fleming, Full-Stack Software Developer specializing in C#/.NET and Angular. Currently Senior Software Developer at biBerk (Berkshire Hathaway)."
@@ -12,7 +12,7 @@
         <meta name="robots" content="noindex, nofollow" />
 
         <!-- Favicons -->
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
         <link
             rel="icon"
             type="image/png"
@@ -54,7 +54,7 @@
             /* Header */
             .cv-header {
                 display: grid;
-                grid-template-columns: 1fr 100px;
+                grid-template-columns: 1fr 120px;
                 gap: 24px;
                 margin-bottom: 28px;
             }
@@ -98,18 +98,19 @@
                 text-decoration: underline;
             }
 
-            .photo-placeholder {
-                width: 100px;
-                height: 130px;
-                border: 2px dashed var(--rule);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 9px;
-                color: var(--muted);
-                text-align: center;
-                padding: 8px;
-                border-radius: 4px;
+            .cv-photo {
+                width: 120px;
+                height: 120px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+            .relocation-note {
+                font-size: 10pt;
+                color: var(--accent);
+                margin-top: 8px;
+                font-style: italic;
+                line-height: 1.4;
             }
 
             /* Sections */
@@ -328,8 +329,8 @@
                     max-width: none;
                 }
 
-                .photo-placeholder {
-                    border-style: solid;
+                .cv-photo {
+                    border-radius: 50%;
                 }
 
                 .stack-tag {
@@ -342,7 +343,7 @@
                     grid-template-columns: 1fr;
                 }
 
-                .photo-placeholder {
+                .cv-photo {
                     justify-self: center;
                 }
 
@@ -369,7 +370,9 @@
 
                     <dl class="contact-grid">
                         <dt>Address</dt>
-                        <dd>[Your Address]</dd>
+                        <dd>
+                            115 Cedar Street, Box 101, Cornwall, PA 17016, USA
+                        </dd>
 
                         <dt>Phone</dt>
                         <dd>+1 717 926 8198</dd>
@@ -406,9 +409,14 @@
                             >
                         </dd>
                     </dl>
+                    <p class="relocation-note">
+                        Relocating to Germany (Osnabrück area), fall 2026.
+                        Residence and work permit via family reunification with
+                        German spouse (in preparation).
+                    </p>
                 </div>
 
-                <div class="photo-placeholder">Photo</div>
+                <img src="img/profile.png" alt="Ron Fleming" class="cv-photo" />
             </header>
 
             <!-- Professional Profile -->
@@ -468,7 +476,20 @@
                         <ul>
                             <li>
                                 Lead refinement, planning, and retrospective
-                                sessions; approve code reviews.
+                                sessions; approve pull requests and code
+                                reviews.
+                            </li>
+                            <li>
+                                Enhanced PurchasePathAutomator with AI-assisted
+                                tooling (Cursor), adding Playwright browser
+                                automation and a learning-mode feature that
+                                caches request data for rapid development
+                                scenario setup.
+                            </li>
+                            <li>
+                                Evaluate architectural approaches; share
+                                technical knowledge through documentation (ADO
+                                Wiki, Microsoft Loop) and cross-team mentoring.
                             </li>
                         </ul>
                     </div>
@@ -480,11 +501,23 @@
                         </div>
                         <ul>
                             <li>
-                                Built PurchasePathAutomator — an internal Blazor
-                                WASM tool with Playwright browser automation
-                                that streamlines navigation through the
-                                insurance purchase path, reducing setup time for
-                                development tasks.
+                                Built PurchasePathAutomator, an internal Blazor
+                                WASM tool that streamlines navigation through
+                                the insurance purchase path, reducing setup time
+                                for development tasks.
+                            </li>
+                            <li>
+                                Implemented full-stack features that automated
+                                underwriting decisions in the quote system,
+                                reducing manual referrals and improving quote
+                                accuracy.
+                            </li>
+                            <li>
+                                Contributed to legacy Aurelia-to-Angular
+                                migration; completed production support
+                                rotations resolving cross-product issues with
+                                Application Insights; integrated partner APIs
+                                for address validation.
                             </li>
                         </ul>
                     </div>
@@ -492,19 +525,21 @@
                     <div class="role-entry">
                         <div class="role-header">
                             <span class="role-title"
-                                >Associate Software Developer</span
+                                >Associate (Junior) Software Developer</span
                             >
                             <span class="role-date">09/2023 – 04/2024</span>
                         </div>
                         <ul>
                             <li>
-                                Built full-stack features for Workers'
-                                Compensation and Professional Liability quote
-                                systems using C#/.NET Core, EF Core, Aurelia,
-                                and Angular.
+                                Built and maintained full-stack features for
+                                enterprise insurance quote systems using C#/.NET
+                                Core, Entity Framework Core, Aurelia, and
+                                Angular.
                             </li>
                             <li>
-                                Write and maintain unit tests using NUnit,
+                                Developed automated rules for premium
+                                calculations, compliance checks, and third-party
+                                data lookups; wrote unit tests using NUnit,
                                 FluentAssertions, and Moq.
                             </li>
                         </ul>
@@ -714,8 +749,9 @@
                         <a href="https://wal-o-mat.net">wal-o-mat.net</a>
                     </p>
                     <p>
-                        Personality quiz parody of the German Wahl-O-Mat voting
-                        tool, built with C# and Blazor WASM, hosted on Azure.
+                        Personality quiz parody of the German Wahl-O-Mat, built
+                        with C# and Blazor WASM. Deployed to Azure Static Web
+                        Apps with GitHub Actions CI/CD.
                     </p>
                 </div>
 
