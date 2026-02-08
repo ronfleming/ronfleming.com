@@ -1,6 +1,7 @@
 # Python scripts for maintenance
 resize_favicons.py
 make_transparent.py
+generate_og_image.py
 
 # Internal notes
 docs/
